@@ -110,22 +110,22 @@ pessoa.mostrarAltura() //"Minha altura é 1.57m."
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-
+pessoa.fazerAniversario()
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.fazerAniversario()
+pessoa.mostrarIdade() // "Olá, eu tenho 40 anos!"
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-pessoa.andar(2);
-pessoa.andar(1);
-pessoa.andar(3);
+pessoa.andar(20);
+pessoa.andar(10);
+pessoa.andar(30);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -148,7 +148,7 @@ pessoa.andando //false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros //6
+pessoa.caminhouQuantosMetros //60
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -168,9 +168,21 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-return "Olá, eu sou a" + pessoa.nome + " " +pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura +"m" + " meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
-};
+var sexo = "o";
+if ( pessoa.sexo === "feminino" ) {
+sexo = "a";
+}
+var idade = "ano";
+if ( pessoa.idade > 1 ) {
+idade = "anos";
+}
+var caminhou = "metro";
+if ( pessoa.caminhouQuantosMetros > 1 ) {
+caminhou = "metros";
+}
+return "Olá, eu sou " + sexo + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + idade + ", " + pessoa.altura +"m," + " meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + caminhou + "!";
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao() // "Olá, eu sou a Vanessa Albino Alves, tenho 40 anos, 1.57m, meu peso é 54kg e, só hoje, eu já caminhei 60 metros!"
 ```
